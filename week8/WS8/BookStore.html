@@ -17,22 +17,23 @@
 
     <div class="container" id="display"></div>
     <div class="container">
-        <button class="btn btn-primary"onclick="prev">ก่อนหน้า</button>
-        <button class="btn btn-primary"onclick="next">ถัดไป</button>
+        <button class="btn btn-primary"onclick="prev()">ก่อนหน้า</button>
+        <button class="btn btn-primary"onclick="next()">ถัดไป</button>
     </div>
 
-    
     <script>
         let xhttp = new XMLHttpRequest();
         let i = 0;
-        let temp= '' ;
-        function getAjax() {
+        let temp= '' ; 
+        function getAjax() {         
             xhttp.open("GET","http://localhost:3000/book")
             xhttp.send();
             xhttp.onload = function(){
                 let obj = JSON.parse(this.responseText);
-                temp = '<tr><td>'+obj[i].title+'</td></tr>';
-                    document.getElementById('display').innerHTML = '<table>'+temp+'</table>'
+                temp = '<tr><td><h2>' + obj[i].title + '</h2><br>'+obj[i].description+'</td>'+
+                    '<td><img src="./img/'+obj[i].picture+'" width="150px"></td>'+
+                    '</tr>';
+                    document.getElementById('display').innerHTML = '<table class = "table">' + temp + '</table>';
             }
         }
         function next() {
