@@ -28,28 +28,31 @@
             for (i=0;i<obj.length;i++){
             //console.log(obj[i]);    
             temp += '<tr>' +
-                '<td>' + obj[i].movieName + '<br>' +
-                '<iframe src="' + obj[i].trailer + '"></iframe></td>'+
-                '</tr>'
-           
-            //temp += '<tr><td>'+obj[i].movieLength+'</td></tr>';
+            '<td>' + obj[i].movieName + 
+            '<br>' +
 
-            //temp += '<tr><td>'+obj[i].director+'</td></tr>';
+            "<b>ความยาวหนัง </b> " + obj[i].movieLength + " นาที" + '<br>'+
 
-            //temp += '<tr><td>'+obj[i].category+'</td></tr>';
+            "<b>หมวดหมู่ </b> " + obj[i].category + '<br>'+
 
-            //temp += '<tr><td>'+obj[i].picture+'</td></tr>';
+            "<b>ผู้กำกับ </b>" + obj[i].director + '<br>' +
 
-            //temp += '<tr><td>'+obj[i].trailer+'</td></tr>';
+            "<b>รีวิว </b>" + obj[i].review.review + '<br>' +
 
-            //temp += '<tr><td>'+obj[i].review+'</td></tr>';
+            "<b>คะแนนรีวิว </b>" + '<br>' +
+            "<b>บทหนัง </b>" + obj[i].review.score.screenPlay + 
+            "<b> การดำเนินเรื่อง </b>" + obj[i].review.score.playing + 
+            "<b> ดนตรีประกอบ </b>" + obj[i].review.score.music + 
+            "<b> ฝีมือนักแสดง </b>" + obj[i].review.score.actorSkills + 
+            "<b> กราฟฟิก </b>" + obj[i].review.score.graphics + 
+            "<b> คะแนนเฉลี่ย </b>" + obj[i].review.score.average + '<br>' +
+                
+            '<center>'+'<iframe width=550px height=400px src="' + obj[i].trailer + '"></iframe>'+'</center>'+
 
-            //'<td><img src="./jpg/'+obj[i].picture , "https://movie.thaiware.com/upload_misc/movie/2022_12/original/221203120331TqQ.jpg",+' ">'+ 
-            //+'</tr>'
+            '<center>'+'<img src='+obj[i].picture+'>'+'<center>'+
+            '</td>'+
+            '</tr>'
             }
-            //<iframe width="420" height="345"
-            //src="https://www.youtube.com/embed/?v=u2QNy_usYuA">
-            //</iframe>
 
             document.getElementById('display').innerHTML = '<table class="table">'+temp+'</table>';
 
@@ -57,3 +60,4 @@
     </script>
   </body>
 </html>
+
