@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
+
+            var options = {
+                title: 'ประเภทของหนังสือที่อ่านมากที่สุดคือโซเชียลมีเดีย',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+</body>
+
+</html>
+
+โดยพฤติกรรมการอ่านแบ่งเป็นโซเชียลมีเดีย 68.1% เว็บไซต์ 15.2% หนังสืออิเล็กทรอนิกส์ 6.5% แอพพลิเคชั่น 2.5% แอพพลิเคชั่นไม่เชื่อมต่ออินเทอร์เน็ต 1.0% อีเมล 0.8% ซีดี/ดีวีดี 0.3% อื่นๆ 7.2% จากการสังเกตจะเห็นว่าสัดส่วนหนังสือและสื่อออนไลน์มีสัดส่วนที่ใกล้กันมากขึ้น
