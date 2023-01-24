@@ -34,7 +34,7 @@
                     let dataMap = [];
                     dataMap[0] = ['Provinces', 'Total'];
                     for (i = 1; i < 78; i++) {
-                        dataMap[i] = [data[i]['CC-DESC'], data[i]['TOTAL']];
+                        dataMap[i] = [data[i]['CC-DESC'], parseInt(data[i]['TOTAL'].replace(/,/g, ''))];
                         //data[i].CC-DESC
                         //data[i]['CC-DESC']
                     }
